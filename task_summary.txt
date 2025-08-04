@@ -1,0 +1,30 @@
+✅ Deliverables
+📁 1. Cleaned Dataset
+Filename: Cleaned_Medical_Appointment.csv
+
+Description: Final version of the dataset after performing all cleaning and preprocessing steps.
+
+Rows: 110527 (original) → [same] (if no duplicates found)
+
+Format: CSV (Comma-Separated Values)
+
+Encoding: UTF-8
+
+Key Improvements:
+
+Dates reformatted to dd-mm-yyyy
+
+Text fields standardized
+
+Columns renamed for consistency
+
+📝 2. Short Summary of Changes
+Step	Description
+1. Missing Values	Checked for missing values using .isnull().sum() — no missing values found.
+2. Duplicates	Removed any duplicate records using .drop_duplicates().
+3. Text Standardization	- Gender: 'F' → 'Female', 'M' → 'Male'
+- No-show: 'No' → 'Showed Up', 'Yes' → 'No Show'
+4. Date Format Conversion	Converted ScheduledDay and AppointmentDay from ISO to dd-mm-yyyy using pd.to_datetime().dt.strftime().
+5. Column Renaming	All column names converted to lowercase, spaces and hyphens replaced with underscores.
+6. Data Type Verification	Ensured age is integer, IDs are numeric, date columns are string in consistent format.
+
