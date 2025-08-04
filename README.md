@@ -1,6 +1,6 @@
 # 🧼 Medical Appointment No-Show Data Cleaning
 
-This project focuses on cleaning and preparing a dataset related to medical appointment attendance in Brazil. The data includes patient demographics, health indicators, appointment details, and no-show information.
+This task focuses on cleaning and preparing a dataset related to medical appointment attendance in Brazil. The data includes patient demographics, health indicators, appointment details, and no-show information.
 
 ## 📊 Dataset Source
 The dataset `Medical Appointment No Shows.csv` includes 110,000+ records of medical appointments and whether patients showed up.
@@ -38,12 +38,6 @@ To clean and preprocess the raw dataset by:
 - `Medical Appointment No Shows.csv` – Raw dataset  
 - `Cleaned_Medical_Appointment.xlsx` – Cleaned output  
 - `data_cleaning_notebook.ipynb` – Full Jupyter Notebook with code  
-- `README.md` – Project description and instructions
+- `README.md` – Task description and instructions
 
 ---
-
-## 🛠 Setup Instructions
-1. Clone the repository  
-2. Install dependencies (only if needed):
-   ```bash
-   pip install pandas openpyxl
