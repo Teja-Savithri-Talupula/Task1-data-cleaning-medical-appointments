@@ -3,28 +3,61 @@
 Filename: Cleaned_Medical_Appointment.csv
 
 Description: Final version of the dataset after performing all cleaning and preprocessing steps.
+Steps Performed:
+Import Libraries
 
-Rows: 110527 (original) → [same] (if no duplicates found)
+pandas for data manipulation
 
-Format: CSV (Comma-Separated Values)
+IPython.display for rendering file download links in Jupyter Notebook
 
-Encoding: UTF-8
+Load Raw Dataset
 
-Key Improvements:
+File: Medical Appointment No Shows.csv
 
-Dates reformatted to dd-mm-yyyy
+Check for Missing Values
 
-Text fields standardized
+Verified that no columns had null entries using .isnull().sum()
 
-Columns renamed for consistency
+Remove Duplicate Rows
 
-📝 2. Short Summary of Changes
-Step	Description
-1. Missing Values	Checked for missing values using .isnull().sum() — no missing values found.
-2. Duplicates	Removed any duplicate records using .drop_duplicates().
-3. Text Standardization	- Gender: 'F' → 'Female', 'M' → 'Male'
-- No-show: 'No' → 'Showed Up', 'Yes' → 'No Show'
-4. Date Format Conversion	Converted ScheduledDay and AppointmentDay from ISO to dd-mm-yyyy using pd.to_datetime().dt.strftime().
-5. Column Renaming	All column names converted to lowercase, spaces and hyphens replaced with underscores.
-6. Data Type Verification	Ensured age is integer, IDs are numeric, date columns are string in consistent format.
+Used .drop_duplicates() to eliminate repeated records
+
+Standardize Text Values
+
+Converted Gender values: 'F' → Female, 'M' → Male
+
+Converted No-show values: 'No' → Showed Up, 'Yes' → No Show
+
+Convert Date Formats
+
+Changed ScheduledDay and AppointmentDay from ISO format to dd-mm-yyyy using pd.to_datetime().dt.strftime()
+
+Rename Columns
+
+Made all column names lowercase and replaced spaces/hyphens with underscores for consistency
+
+Export Cleaned Dataset
+
+Saved final output as Cleaned_Medical_Appointment.xlsx using to_excel()
+
+Provided a clickable download link inside the notebook for convenience
+
+Displayed Cleaned Dataset
+
+Used display(df.head()) to preview first 10 cleaned rows in a well-formatted table
+
+📄 GitHub READ
+✅ Data Cleaning Completed Successfully
+
+Here's a summary of changes made to the dataset:
+
+🔍 Cleaning Summary
+Task	Action Taken
+Missing Values	No missing values found.
+Duplicates	Removed duplicate rows, if any.
+Text Standardization	Gender: F → Female, M → Male
+No-show: No → Showed Up, Yes → No Show
+Date Formatting	ScheduledDay and AppointmentDay converted to dd-mm-yyyy format
+Column Renaming	All column names changed to lowercase and underscores (_) used instead of spaces or hyphens
+Data Type Verification	All columns are in appropriate formats for analysis. Date columns are strings in dd-mm-yyyy format.
 
