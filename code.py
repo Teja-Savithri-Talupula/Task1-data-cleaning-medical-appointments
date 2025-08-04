@@ -1,9 +1,10 @@
 import pandas as pd
+from IPython.display import FileLink, display
 
 file_path = "Medical Appointment No Shows.csv"  
 df = pd.read_csv(file_path)
 
-print("Missing values per column:")
+print(" Missing values per column:")
 print(df.isnull().sum())
 
 df = df.drop_duplicates()
@@ -16,10 +17,11 @@ df['AppointmentDay'] = pd.to_datetime(df['AppointmentDay']).dt.strftime('%d-%m-%
 
 df.columns = [col.strip().lower().replace(' ', '_').replace('-', '_') for col in df.columns]
 
-print("\nData types after cleaning:")
-print(df.dtypes)
+excel_file_name = "Cleaned_Medical_Appointment.xlsx"
+df.to_excel(excel_file_name, index=False)
 
-print("\nCleaned dataset preview:")
-print(df.head())
+print("\n Cleaned Dataset Preview (first 10 rows):")
+display(df.head(10))
 
-df.to_csv("Cleaned_Medical_Appointment.csv", index=False)
+print("\n Click below to download the cleaned Excel file:")
+display(FileLink(excel_file_name))
